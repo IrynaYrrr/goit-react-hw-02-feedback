@@ -1,8 +1,10 @@
+import Feedback from './feedback/Feedback';
+
 export const App = () => {
   return (
     <div
       style={{
-        height: '100vh',
+        height: '40vh',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
@@ -10,7 +12,8 @@ export const App = () => {
         color: '#010101'
       }}
     >
-      React homework template
+      Please leave feedback:
+      <Feedback />
     </div>
   );
 };
