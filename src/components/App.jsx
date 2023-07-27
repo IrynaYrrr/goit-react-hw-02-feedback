@@ -36,6 +36,12 @@ export class App extends Component {
     return this.state.good + this.state.neutral + this.state.bad;
   }
 
+  countPositiveFeedbackPercentage(){
+
+    const persentage = Math.round(this.state.good / this.countTotalFeedback() * 100)
+    return isNaN(persentage) ? 0 : persentage
+  }
+
   render() {
 
     return (
@@ -55,7 +61,9 @@ export class App extends Component {
         <button onClick={this.handleNeutral} type="button" className='feedback-btn neutral-btn'>neutral: {this.state.neutral}</button>
         <button onClick={this.handleBad} type="button" className='feedback-btn bad-btn'>bad: {this.state.bad}</button>
 
-        <span>Total: {this.countTotalFeedback()}</span>
+        <span className='total-feedback'>Total: {this.countTotalFeedback()}</span>
+        <span className='positive-feedback'>Positive feedback: {this.countPositiveFeedbackPercentage()} %</span>
+
       </div>
     );
   }
