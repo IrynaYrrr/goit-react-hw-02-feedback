@@ -32,6 +32,10 @@ export class App extends Component {
     })
   }
 
+  countTotalFeedback(){
+    return this.state.good + this.state.neutral + this.state.bad;
+  }
+
   render() {
 
     return (
@@ -46,9 +50,12 @@ export class App extends Component {
       }}>
 
         <span className='title-feedback'>Please leave feedback:</span>
+
         <button onClick={this.handleGood} type="button" className='feedback-btn good-btn'>good: {this.state.good}</button>
         <button onClick={this.handleNeutral} type="button" className='feedback-btn neutral-btn'>neutral: {this.state.neutral}</button>
         <button onClick={this.handleBad} type="button" className='feedback-btn bad-btn'>bad: {this.state.bad}</button>
+
+        <span>Total: {this.countTotalFeedback()}</span>
       </div>
     );
   }
