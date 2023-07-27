@@ -32,11 +32,11 @@ export class App extends Component {
     })
   }
 
-  countTotalFeedback(){
+  countTotalFeedback() {
     return this.state.good + this.state.neutral + this.state.bad;
   }
 
-  countPositiveFeedbackPercentage(){
+  countPositiveFeedbackPercentage() {
 
     const persentage = Math.round(this.state.good / this.countTotalFeedback() * 100)
     return isNaN(persentage) ? 0 : persentage
@@ -56,16 +56,21 @@ export class App extends Component {
       }}>
 
         <span className='title-feedback'>Please leave feedback:</span>
+
+        <div className='feedback-buttons'> <button onClick={this.handleGood} type="button" className='feedback-btn good-btn'>good: </button>
+          <button onClick={this.handleNeutral} type="button" className='feedback-btn neutral-btn'>neutral: </button>
+          <button onClick={this.handleBad} type="button" className='feedback-btn bad-btn'>bad: </button>
+        </div>
+
         <span className='title-statistics'>Statistics:</span>
 
-
-        <button onClick={this.handleGood} type="button" className='feedback-btn good-btn'>good: {this.state.good}</button>
-        <button onClick={this.handleNeutral} type="button" className='feedback-btn neutral-btn'>neutral: {this.state.neutral}</button>
-        <button onClick={this.handleBad} type="button" className='feedback-btn bad-btn'>bad: {this.state.bad}</button>
-
-        <span className='total-feedback'>Total: {this.countTotalFeedback()}</span>
-        <span className='positive-feedback'>Positive feedback: {this.countPositiveFeedbackPercentage()} %</span>
-
+        <ul className='feedback-list'>
+          <li className='feedback-item'>good: {this.state.good}</li>
+          <li className='feedback-item'>neutral: {this.state.neutral}</li>
+          <li className='feedback-item'>bad: {this.state.bad}</li>
+          <li className='feedback-item'>Total: {this.countTotalFeedback()}</li>
+          <li className='feedback-item'>Positive feedback: {this.countPositiveFeedbackPercentage()}%</li>
+        </ul>
       </div>
     );
   }

@@ -15,16 +15,34 @@ code {
 }
 
 .title-feedback {
-  margin-top: 350px;
+  margin-top: 50vh;
   margin-bottom: 30px;
 }
 
 .title-statistics {
-  margin-bottom: 30px;
+  font-weight: 500;
+  margin-top: 30px;
+}
+
+.feedback-buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.feedback-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.feedback-item {
+  list-style-type: none;
 }
 
 .feedback-btn {
-  width: 20%;
+  border-radius: 5px;
+  width: 100%;
   margin: 15px 0;
   border: none;
   color: white;
@@ -48,7 +66,6 @@ code {
   background-color: #ff2020;
 }
 
-.total-feedback,
 .positive-feedback {
   margin-top: 25px;
 }
