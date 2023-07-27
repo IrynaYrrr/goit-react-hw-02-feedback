@@ -56,6 +56,8 @@ export class App extends Component {
       }}>
 
         <span className='title-feedback'>Please leave feedback:</span>
+        <span className='title-statistics'>Statistics:</span>
+
 
         <button onClick={this.handleGood} type="button" className='feedback-btn good-btn'>good: {this.state.good}</button>
         <button onClick={this.handleNeutral} type="button" className='feedback-btn neutral-btn'>neutral: {this.state.neutral}</button>
