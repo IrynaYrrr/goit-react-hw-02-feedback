@@ -1,8 +1,8 @@
 import React from 'react'
 import css from './Notification.module.css'
 
-export const Notification = () => {
+export const Notification = ({ titleNotification }) => {
   return (
-    <div className={css.notificationTitle}>There is no feedback</div>
+    <div className={css.notificationTitle}>{titleNotification}</div>
   )
 }

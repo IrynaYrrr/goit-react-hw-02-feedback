@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Statistics } from './Statistics/Statistics';
 import { Notification } from './Notification/Notification';
 import { FeedbackOptions } from './FeedbackOptions/FeedbackOptions';
+import { Section } from './Section/Section';
 
 export class App extends Component {
   state = {
@@ -58,13 +59,15 @@ export class App extends Component {
         color: '#010101'
       }}>
 
-        <span className='title-feedback'>Please leave feedback:</span>
+        <Section titleFeedback='Please leave feedback' />
 
         <FeedbackOptions
           good={this.handleGood}
           neutral={this.handleNeutral}
           bad={this.handleBad}
         />
+
+        <Section titleStatistics='Statistics' />
 
         {this.countTotalFeedback() !== 0
           ?
@@ -76,7 +79,7 @@ export class App extends Component {
             positivePercentage={this.countPositiveFeedbackPercentage()}
           />
           :
-          <Notification />}
+          <Notification titleNotification='There is no feedback' />}
       </div>
     );
   }
