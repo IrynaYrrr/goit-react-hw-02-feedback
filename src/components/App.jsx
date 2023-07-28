@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Statistics } from './Statistics/Statistics';
 import { Notification } from './Notification/Notification';
+import { FeedbackOptions } from './FeedbackOptions/FeedbackOptions';
 
 export class App extends Component {
   state = {
@@ -59,11 +60,11 @@ export class App extends Component {
 
         <span className='title-feedback'>Please leave feedback:</span>
 
-        <div className='feedback-buttons'>
-          <button onClick={this.handleGood} type="button" className='feedback-btn good-btn'>good</button>
-          <button onClick={this.handleNeutral} type="button" className='feedback-btn neutral-btn'>neutral</button>
-          <button onClick={this.handleBad} type="button" className='feedback-btn bad-btn'>bad</button>
-        </div>
+        <FeedbackOptions
+          good={this.handleGood}
+          neutral={this.handleNeutral}
+          bad={this.handleBad}
+        />
 
         {this.countTotalFeedback() !== 0
           ?

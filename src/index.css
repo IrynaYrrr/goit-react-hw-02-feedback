@@ -18,35 +18,3 @@ code {
   margin-top: 50vh;
   margin-bottom: 30px;
 }
-
-.feedback-buttons {
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
-}
-
-.feedback-btn {
-  border-radius: 5px;
-  width: 100%;
-  margin: 15px 0;
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 25px;
-  cursor: pointer;
-}
-
-.good-btn {
-  background-color: #4caf50;
-}
-
-.neutral-btn {
-  background-color: #ffb726;
-}
-
-.bad-btn {
-  background-color: #ff2020;
-}
