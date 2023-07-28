@@ -50,18 +50,3 @@ code {
 .bad-btn {
   background-color: #ff2020;
 }
-
-.title-statistics {
-  font-weight: 500;
-  margin-top: 30px;
-}
-
-.feedback-list {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.feedback-item {
-  list-style-type: none;
-}

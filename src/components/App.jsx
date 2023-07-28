@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Statistics } from './Statistics/Statistics';
 
 export class App extends Component {
   state = {
@@ -37,10 +38,10 @@ export class App extends Component {
   }
 
   countPositiveFeedbackPercentage() {
-
     const persentage = Math.round(this.state.good / this.countTotalFeedback() * 100)
     return isNaN(persentage) ? 0 : persentage
   }
+
 
   render() {
 
@@ -57,20 +58,18 @@ export class App extends Component {
 
         <span className='title-feedback'>Please leave feedback:</span>
 
-        <div className='feedback-buttons'> <button onClick={this.handleGood} type="button" className='feedback-btn good-btn'>good</button>
+        <div className='feedback-buttons'>
+          <button onClick={this.handleGood} type="button" className='feedback-btn good-btn'>good</button>
           <button onClick={this.handleNeutral} type="button" className='feedback-btn neutral-btn'>neutral</button>
           <button onClick={this.handleBad} type="button" className='feedback-btn bad-btn'>bad</button>
         </div>
-
-        <span className='title-statistics'>Statistics:</span>
-
-        <ul className='feedback-list'>
-          <li className='feedback-item'>good: {this.state.good}</li>
-          <li className='feedback-item'>neutral: {this.state.neutral}</li>
-          <li className='feedback-item'>bad: {this.state.bad}</li>
-          <li className='feedback-item'>Total: {this.countTotalFeedback()}</li>
-          <li className='feedback-item'>Positive feedback: {this.countPositiveFeedbackPercentage()}%</li>
-        </ul>
+        <Statistics
+          good={this.state.good}
+          neutral={this.state.neutral}
+          bad={this.state.bad}
+          total={this.countTotalFeedback()}
+          positivePercentage={this.countPositiveFeedbackPercentage()}
+        />
       </div>
     );
   }
