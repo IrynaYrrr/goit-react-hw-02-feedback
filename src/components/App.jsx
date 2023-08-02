@@ -11,7 +11,6 @@ export class App extends Component {
     bad: 0
   };
 
-
   handleGood = () => {
     this.setState((prevState) => {
       return {
@@ -45,12 +44,10 @@ export class App extends Component {
     return isNaN(persentage) ? 0 : persentage
   }
 
-
   render() {
 
     return (
       <div style={{
-        height: '40vh',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
@@ -59,27 +56,28 @@ export class App extends Component {
         color: '#010101'
       }}>
 
-        <Section titleFeedback='Please leave feedback' />
-
-        <FeedbackOptions
-          good={this.handleGood}
-          neutral={this.handleNeutral}
-          bad={this.handleBad}
-        />
-
-        <Section titleStatistics='Statistics' />
-
+        <Section title='Please leave feedback'>
+          <FeedbackOptions
+            good={this.handleGood}
+            neutral={this.handleNeutral}
+            bad={this.handleBad}
+          />
+        </Section>
         {this.countTotalFeedback() !== 0
           ?
-          <Statistics
-            good={this.state.good}
-            neutral={this.state.neutral}
-            bad={this.state.bad}
-            total={this.countTotalFeedback()}
-            positivePercentage={this.countPositiveFeedbackPercentage()}
-          />
+          <Section title='Statistics'>
+            <Statistics
+              good={this.state.good}
+              neutral={this.state.neutral}
+              bad={this.state.bad}
+              total={this.countTotalFeedback()}
+              positivePercentage={this.countPositiveFeedbackPercentage()}
+            />
+          </Section>
           :
-          <Notification titleNotification='There is no feedback' />}
+          <Notification title='There is no feedback' />
+        }
+
       </div>
     );
   }

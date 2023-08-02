@@ -1,11 +1,13 @@
 import React from 'react'
 import css from './Section.module.css'
 
-export const Section = ({ titleStatistics, titleFeedback }) => {
+export const Section = ({ title, children }) => {
   return (
-    <div>
-      <div className={css.titleFeedback}>{titleFeedback}</div>
-      <div className={css.titleStatistics}>{titleStatistics}</div>
-    </div>
+    <section>
+      <div className={css.titleSection}>
+        {title}
+      </div>
+      {children}
+    </section>
   )
 }
