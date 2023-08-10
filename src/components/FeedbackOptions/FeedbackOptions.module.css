@@ -19,17 +19,17 @@
   background-color: #ffb726;
 }
 
-.goodBtn {
+.good {
   composes: feedbackBtn;
   background-color: #4caf50;
 }
 
-.neutralBtn {
+.neutral {
   composes: feedbackBtn;
   background-color: #ffb726;
 }
 
-.badBtn {
+.bad {
   composes: feedbackBtn;
   background-color: #ff2020;
 }

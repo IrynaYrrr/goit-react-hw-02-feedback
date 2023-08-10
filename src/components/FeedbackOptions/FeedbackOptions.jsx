@@ -1,20 +1,15 @@
 import React from 'react';
 import css from './FeedbackOptions.module.css';
-import clsx from 'clsx';
 import PropTypes from 'prop-types';
 
-export const FeedbackOptions = ({ feedbackBtn, good, neutral, bad }) => {
+export const FeedbackOptions = ({options, onLeaveFeedback}) => {
   return (
     <div className={css.feedbackButtons}>
-      <button onClick={good} type="button" className={clsx(css[feedbackBtn], [css.goodBtn])}>
-        good
-      </button>
-      <button onClick={neutral} type="button" className={clsx(css[feedbackBtn], [css.neutralBtn])}>
-        neutral
-      </button>
-      <button onClick={bad} type="button" className={clsx(css[feedbackBtn], [css.badBtn])}>
-        bad
-      </button>
+      {options.map((button) => (
+          <button className={css[button]} onClick={() => onLeaveFeedback(button)} type="button">
+            {button}
+          </button>
+      ))}
     </div>
   )
 }
